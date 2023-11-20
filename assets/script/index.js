@@ -41,13 +41,17 @@ function setAlarm() {
     alarmMinute = alarmMinute2;
     isTimeUp = false;
     const alarmP = document.querySelector('#alarmP');
-    alarmP.innerText = `${alarmHour2}:${alarmMinute2}`;
+    if(alarmMinute2 < 9){
+        alarmP.innerText = `${alarmHour2}:0${alarmMinute2}`;
+    } else {
+        alarmP.innerText = `${alarmHour2}:${alarmMinute2}`;
+    }
     document.getElementById('hour').value = '';
     document.getElementById('minute').value = '';
 }
 
-updateTime(); // Initial display of time
-setInterval(updateTime, 1000); // Update time every second
+updateTime(); 
+setInterval(updateTime, 1000); 
 
 btnSetAlarm.addEventListener('click', setAlarm);
 
