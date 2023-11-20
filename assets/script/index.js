@@ -21,6 +21,8 @@ function updateTime() {
     showDialog();
     isTimeUp = true;
     alarmSound.play();
+    const alarmP = document.querySelector('#alarmP');
+    alarmP.innerText = 'No alarm';
   }   
 }
 
