@@ -17,6 +17,10 @@ html, body{
     font-family: 'Courier New', Courier, monospace;
 }
 
+#nowTime {
+    font-size: 110px;
+}
+
 h1, h2, p, i {
     white-space: nowrap;
     margin: 5px;
