@@ -18,7 +18,7 @@ function updateTime() {
 
 
   if (!isTimeUp && alarmHour === currentHour && alarmMinute === currentMinute) {
-    alert('Time is up!')
+    showDialog();
     isTimeUp = true;
     alarmSound.play();
   }   
@@ -48,3 +48,12 @@ updateTime(); // Initial display of time
 setInterval(updateTime, 1000); // Update time every second
 
 btnSetAlarm.addEventListener('click', setAlarm);
+
+function showDialog() {
+    Swal.fire({
+      title: 'Time is up',
+      text: 'Time is up!',
+      icon: 'info', // 'info', 'success', 'error', 'warning', 'question'
+      confirmButtonText: 'OK',
+    });
+  }
